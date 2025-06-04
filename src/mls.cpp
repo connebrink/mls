@@ -12,7 +12,10 @@ const char MLsbuildTime[] = __TIME__;
 using namespace std;
 
 enum MLsMsgID {
-  M_I_SUCCEEDED,
+  M_R_SUCCEEDED,
+  M_R_E_COMMON_ERROR,
+  M_I_VERSION,
+  M_I_CREATED,
   M_END
 };
 
@@ -22,7 +25,10 @@ struct MLsMsg {
 };
 
 const MLsMsg MLsMsgs[MLsMsgID::M_END] {
-  {MLsMsgID::M_I_SUCCEEDED, "Ok"}
+  {M_R_SUCCEEDED,      "Ok"},
+  {M_R_E_COMMON_ERROR, "Error"},
+  {M_I_VERSION,        "Version : {}"},
+  {M_I_CREATED,        "Created : {}"}
 };
 
 class MLs
@@ -70,7 +76,7 @@ int MLs::run() const {
   using namespace std;
   namespace fs = filesystem;
   
-  int execResult {MLsMsgID::M_I_SUCCEEDED};
+  int execResult {MLsMsgID::M_R_SUCCEEDED};
 
   for(auto& dirItem: fs::directory_iterator("."))
     cout << dirItem.path() << '\n';
