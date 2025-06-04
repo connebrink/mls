@@ -13,7 +13,7 @@ using namespace std;
 
 enum MLsMsgID {
   M_R_SUCCEEDED,
-  M_R_E_COMMON_ERROR,
+  M_R_E_ERROR,
   M_I_VERSION,
   M_I_CREATED,
   M_END
@@ -26,7 +26,7 @@ struct MLsMsg {
 
 const MLsMsg MLsMsgs[MLsMsgID::M_END] {
   {M_R_SUCCEEDED,      "Ok"},
-  {M_R_E_COMMON_ERROR, "Error"},
+  {M_R_E_ERROR,        "E : {}"},
   {M_I_VERSION,        "Version : {}"},
   {M_I_CREATED,        "Created : {}"}
 };
@@ -34,13 +34,18 @@ const MLsMsg MLsMsgs[MLsMsgID::M_END] {
 class MLs
 {
 private:
-  struct MLSArg {
+  struct MLsArg {
     string argStr;
     int argFlags;
   };
 
 private:
-  vector<MLSArg> arguments;
+  struct MLsPrintItem {
+    int prtFlags;
+  };
+
+private:
+  vector<MLsArg> arguments;
 
 private:
   int determineFlags(const char* paramValue) {
