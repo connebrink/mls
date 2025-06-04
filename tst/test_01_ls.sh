@@ -12,8 +12,6 @@ OUTPUT_MLS="$($TEST_MLS)"
 
 if [[ "$OUTPUT_LS" == "OUTPUT_MLS" ]]; then
     echo -e "test_01 : ${GREEN}Passed${NC}"
-    exit 0
 else
     echo -e "test_01 : ${RED}Failed${NC}"
-    exit 0
 fi
