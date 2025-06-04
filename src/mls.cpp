@@ -33,7 +33,7 @@ public:
   int run() const;
 };
 
-int main(int argCount, char *argValues[])
+int main(int argCount, char **argValues)
 {
   MLs mLs {argCount, argValues};
   return mLs.run();

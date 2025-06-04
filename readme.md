@@ -5,3 +5,11 @@ some core tools like **ls**. But i wonder why not new versions of such
 core utilities apps with modern C++. I will try it with this project  
 for the ls command. I hope it will be alot of fun.
 
+# Features 
+- Try to be **ls** compatible
+- Fancy colors
+- Fast of course
+- Buildable static
+- No Dependencies
+- Easy C++
+
