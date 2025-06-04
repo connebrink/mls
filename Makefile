@@ -30,10 +30,8 @@ release:clean
 	@mkdir -p $(DEPDIR)
 	@ cp $(OUTDIRBIN)/$(PRJNAME) $(DEPDIR) 
 
-
 tests:	debug
 	@tst/test_01_ls.sh $(TSTDIR) $(OUTDIRBIN)/$(PRJNAME) 
-
 
 clean:
 	@rm -rf $(OUTDIR)

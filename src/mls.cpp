@@ -29,17 +29,25 @@ class MLs
 {
 private:
   struct MLSArg {
-    string origArgStr;
+    string argStr;
+    int argFlags;
   };
 
 private:
   vector<MLSArg> arguments;
 
 private:
+  int determineFlags(const char* paramValue) {
+    if (paramValue == nullptr)
+      return 0;
+    return 0;
+  }
+  
+private:
   void _readArguments(int argCount, char **argValues) {
     if (argCount && argValues == nullptr) return;
     for (int i = 0; i < argCount; ++i) {
-      arguments.push_back({argValues[i]});
+      arguments.push_back({argValues[i], determineFlags(argValues[i])});
     }
   }
 
