@@ -10,8 +10,8 @@ TEST_MLS="$2 $TEST_DIR"
 OUTPUT_LS="$($TEST_LS)"
 OUTPUT_MLS="$($TEST_MLS)"
 
-if [[ "$OUTPUT_LS" == "OUTPUT_MLS" ]]; then
-    echo -e "test_01 : ${GREEN}Passed${NC}"
+if [[ "$OUTPUT_LS" == "$OUTPUT_MLS" ]]; then
+    echo -e "test_01 : ${GREEN}Passed${NC} : Simple run without any params"
 else
-    echo -e "test_01 : ${RED}Failed${NC}"
+    echo -e "test_01 : ${RED}Failed${NC} : Simple run without any params"
 fi
