@@ -30,14 +30,17 @@ public:
   }
 
 public:
-  int execute() const {
-    int execResult {0};
-    return execResult;
-  }
+  int run() const;
 };
 
 int main(int argCount, char *argValues[])
 {
   MLs mLs {argCount, argValues};
-  return mLs.execute();
+  return mLs.run();
+}
+
+
+int MLs::run() const {
+  int execResult {0};
+  return execResult;
 }
