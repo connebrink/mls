@@ -18,6 +18,10 @@ private:
 
 private:
   void _readArguments(int argCount, char **argValues) {
+    if (argCount && argValues == nullptr) return;
+    for (int i = 0; i < argCount; ++i) {
+      arguments.push_back({argValues[i]});
+    }
   }
 
 public:
