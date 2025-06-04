@@ -5,6 +5,7 @@ MAINSRC=src/$(PRJNAME).cpp
 DEPDIR=bin
 OUTDIR=trg
 OUTDIRBIN=$(OUTDIR)/bin
+TSTDIR=tst/check
 
 CXX=g++
 CXXFLAGS=-std=c++20 -pedantic -Wall -Wextra -Werror
@@ -28,6 +29,11 @@ release:clean
 	@ $(CXX) $(CXXFLAGSREL) -o $(OUTDIRBIN)/$(PRJNAME) $(MAINSRC)
 	@mkdir -p $(DEPDIR)
 	@ cp $(OUTDIRBIN)/$(PRJNAME) $(DEPDIR) 
+
+
+tests:	debug
+	@tst/test_01_ls.sh $(TSTDIR) $(OUTDIRBIN)/$(PRJNAME) 
+
 
 clean:
 	@rm -rf $(OUTDIR)

@@ -4,6 +4,11 @@
 #include <string>
 #include <vector>
 
+const char MLsVersion[] = "0.1";
+
+const char MLsBuildDate[] = __DATE__;
+const char MLsbuildTime[] = __TIME__;
+
 using namespace std;
 
 enum MLsMsgID {
