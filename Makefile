@@ -9,7 +9,7 @@ TSTDIR=tst/check
 
 CXX=g++
 CXXFLAGS=-std=c++20 -pedantic -Wall -Wextra -Werror
-CXXFLAGSREL=$(CXXFLAGS) -O2 -s -g0 -DNDEBUG
+CXXFLAGSREL=$(CXXFLAGS) -static -O2 -s -g0 -DNDEBUG
 CXXFLAGSDEB=$(CXXFLAGS) -O0 -g -DDEBUG
 
 .PHONY: all
