@@ -31,7 +31,9 @@ release:clean
 	@ cp $(OUTDIRBIN)/$(PRJNAME) $(DEPDIR) 
 
 tests:	debug
-	@tst/test_01_ls.sh $(TSTDIR) $(OUTDIRBIN)/$(PRJNAME) 
+	@echo "  Tests : Begin"
+	@tst/test_01_ls.sh $(TSTDIR) $(OUTDIRBIN)/$(PRJNAME)
+	@echo "  Tests : End"
 
 clean:
 	@rm -rf $(OUTDIR)

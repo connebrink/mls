@@ -11,7 +11,7 @@ OUTPUT_LS="$($TEST_LS)"
 OUTPUT_MLS="$($TEST_MLS)"
 
 if [[ "$OUTPUT_LS" == "$OUTPUT_MLS" ]]; then
-    echo -e "test_01 : ${GREEN}Passed${NC} : Simple run without any params"
+    echo -e "    001 : ${GREEN}Passed${NC} : Simple run with given dir ($1)"
 else
-    echo -e "test_01 : ${RED}Failed${NC} : Simple run without any params"
+    echo -e "    001 : ${RED}Failed${NC} : Simple run with given dir ($1)"
 fi
