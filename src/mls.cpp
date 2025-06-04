@@ -6,6 +6,20 @@
 
 using namespace std;
 
+enum MLsMsgID {
+  M_I_SUCCEEDED,
+  M_END
+};
+
+struct MLsMsg {
+  MLsMsgID id;
+  char desc[256];
+};
+
+const MLsMsg MLsMsgs[MLsMsgID::M_END] {
+  {MLsMsgID::M_I_SUCCEEDED, "Ok"}
+};
+
 class MLs
 {
 private:
@@ -43,10 +57,10 @@ int MLs::run() const {
   using namespace std;
   namespace fs = filesystem;
   
-  int execResult {0};
+  int execResult {MLsMsgID::M_I_SUCCEEDED};
 
   for(auto& dirItem: fs::directory_iterator("."))
     cout << dirItem.path() << '\n';
-  
+
   return execResult;
 }
