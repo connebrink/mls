@@ -3,7 +3,6 @@ RED='\033[0;91m'
 GREEN='\033[0;92m'
 NC='\033[0m'
 
-
 TEST_DIR="$1"
 TEST_LS="ls $TEST_DIR"
 TEST_MLS="$2 $TEST_DIR" 
