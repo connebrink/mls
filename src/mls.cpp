@@ -39,8 +39,14 @@ int main(int argCount, char **argValues)
   return mLs.run();
 }
 
-
 int MLs::run() const {
+  using namespace std;
+  namespace fs = filesystem;
+  
   int execResult {0};
+
+  for(auto& dirItem: fs::directory_iterator("."))
+    cout << dirItem.path() << '\n';
+  
   return execResult;
 }
