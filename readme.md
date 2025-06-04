@@ -6,10 +6,10 @@ core utilities apps with modern C++. I will try it with this project
 for the ls command. I hope it will be alot of fun.
 
 # Features 
-- Try to be **ls** compatible
-- Fancy colors
-- Fast of course
-- Buildable static
+- Try to be compatible with **ls** 
+- Fancy colors and else more fancy stuff
+- Fast of course, hopefully
+- Support for static builds
 - No Dependencies
 - Easy C++
 
