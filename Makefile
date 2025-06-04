@@ -13,7 +13,7 @@ CXXFLAGSDEB=$(CXXFLAGS) -O0 -g -DDEBUG
 
 .PHONY: all
 
-all: clean debug
+all: debug
 
 debug:
 	@mkdir -p $(OUTDIRBIN)

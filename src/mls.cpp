@@ -1,8 +1,8 @@
 
-#include <string>
-#include <iostream>
-#include <vector>
 #include <filesystem>
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -27,7 +27,7 @@ public:
 
 public:
   int execute() const {
-    int execResult  {0};
+    int execResult {0};
     return execResult;
   }
 };
@@ -37,4 +37,3 @@ int main(int argCount, char *argValues[])
   MLs mLs {argCount, argValues};
   return mLs.execute();
 }
-
