@@ -81,10 +81,21 @@ int MLs::run() const {
   using namespace std;
   namespace fs = filesystem;
   
-  int execResult {MLsMsgID::M_R_E_ERROR};
+  int execResult {MLsMsgID::M_R_SUCCEEDED};
 
-  for(auto& dirItem: fs::directory_iterator("."))
-    cout << dirItem.path() << '\n';
+  string destDir;
+  
+  for (const auto& a : arguments) {
+    if (!a.argFlags)
+      destDir =  a.argStr;
+  }
+
+  for(auto& dirItem: fs::directory_iterator(destDir)) {
+    string dItem {dirItem.path().filename()};
+    if (dItem[0] !=  '.')
+      cout << dItem << '\n';
+  }
+    
 
   return execResult;
 }
