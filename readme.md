@@ -7,7 +7,7 @@ for the ls command. I hope it will be alot of fun.
 
 # Features 
 - Try to be compatible with **ls** 
-- Fancy colors and else more fancy stuff
+- Fancy colors and other more fancy stuff
 - Fast of course, hopefully
 - Support for static builds
 - No Dependencies
