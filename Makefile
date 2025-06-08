@@ -30,7 +30,7 @@ release:clean
 	@mkdir -p $(DEPDIR)
 	@ cp $(OUTDIRBIN)/$(PRJNAME) $(DEPDIR) 
 
-tests:	debug
+tests:  debug
 	@echo "  Tests : Begin"
 	@tst/test_01_ls.sh $(TSTDIR) $(OUTDIRBIN)/$(PRJNAME)
 	@echo "  Tests : End"

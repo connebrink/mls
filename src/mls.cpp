@@ -25,10 +25,10 @@ struct MLsMsg {
 };
 
 const MLsMsg MLsMsgs[MLsMsgID::M_END] {
-  {M_R_SUCCEEDED,      "Ok"},
-  {M_R_E_ERROR,        "E : {}"},
-  {M_I_VERSION,        "Version : {}"},
-  {M_I_CREATED,        "Created : {}"}
+  {M_R_SUCCEEDED,"Ok"},
+  {M_R_E_ERROR,  "E : {}"},
+  {M_I_VERSION,  "Version : {}"},
+  {M_I_CREATED,  "Created : {}"}
 };
 
 class MLs
@@ -81,7 +81,7 @@ int MLs::run() const {
   using namespace std;
   namespace fs = filesystem;
   
-  int execResult {MLsMsgID::M_R_SUCCEEDED};
+  int execResult {MLsMsgID::M_R_E_ERROR};
 
   for(auto& dirItem: fs::directory_iterator("."))
     cout << dirItem.path() << '\n';
